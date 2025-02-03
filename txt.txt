@@ -1,0 +1,964 @@
+styles.css/* General Styles */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    color: green;
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+a {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* Animations for Button */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button {
+    animation: pulse 1.5s infinite;
+}
+
+
+/* Rotating Spinner for Attendance */
+
+.spinner {
+    display: none;
+    margin: 20px auto;
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+    }
+    button {
+        font-size: 18px;
+    }
+}
+
+
+/* Smooth transitions for forms */
+
+form input,
+form button {
+    transition: all 0.3s ease;
+}
+
+
+/* Hover effect on inputs */
+
+input:hover {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+
+/* Additional Styles for Login and Register Forms */
+
+.login-register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.login-register-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Hover Effect for Links */
+
+a:hover {
+    color: #0056b3;
+}
+
+
+/* Modal Styles */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+}
+
+.close-btn {
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-btn:hover {
+    color: #007bff;
+}
+
+
+/* Dark Mode */
+
+body.dark-mode {
+    background-color: #2c2c2c;
+    color: white;
+}
+
+button.dark-mode-btn {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+
+/* Progress Bar Styles */
+
+.progress-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    height: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #007bff;
+    width: 0%;
+    border-radius: 5px;
+    transition: width 1s;
+}
+
+
+/* Preloader Styles */
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.preloader .spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.error-container {
+    text-align: center;
+    padding: 50px;
+}
+
+.error-container h2 {
+    font-size: 32px;
+    color: #333;
+}
+
+.error-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.error-container a:hover {
+    text-decoration: underline;
+}
+
+
+/* Profile Page Styles */
+
+.profile-container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.profile-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Profile Section Styles */
+
+.profile {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Circle the image */
+    object-fit: cover;
+}
+
+.profile-name p {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+
+/* Style the profile container when clicked */
+
+.profile a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.profile a:hover {
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+register.php
+<?php
+session_start();
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "attendance_db";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Secure password hashing
+
+    $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')";
+    if ($conn->query($sql) === TRUE) {
+        echo "Registration successful! <a href='login.php'>Login here</a>";
+    } else {
+        echo "Error: " . $conn->error;
+    }
+}
+
+$conn->close();
+?>
+
+<!DOCTYPE html>
+<html>
+<head><title>Register</title></head>
+<link rel="stylesheet" href="styles.css">
+<!-- FontAwesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<body>
+    <div class="login-register-container">
+        <div class="login-register-form">
+            <h2>Register</h2>
+            <form method="POST">
+                <input type="text" name="name" placeholder="Full Name" required><br>
+                <input type="email" name="email" placeholder="Email" required><br>
+                <input type="password" name="password" placeholder="Password" required><br>
+                <button type="submit"><i class="fas fa-sign-in-alt"></i> Register</button>
+
+            </form>
+            <p>Already have an account? <a href="login.php">Login here</a></p>
+        </div>
+    </div>
+    <script>
+    window.onload = function() {
+    document.getElementById('preloader').style.display = 'none';
+}
+
+document.getElementById('preloader').style.display = 'flex'; // Show preloader during load
+
+        function updateProgressBar(percent) {
+    document.getElementById('progress-container').style.display = 'block';
+    document.getElementById('progress-bar').style.width = percent + '%';
+}
+
+function markAttendance() {
+    updateProgressBar(50); // Update progress bar
+    // Simulate processing...
+    setTimeout(() => {
+        updateProgressBar(100); // Complete the progress bar
+        // Other attendance logic here...
+    }, 2000);
+}
+
+    function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    let button = document.getElementById('dark-mode-btn');
+    if (document.body.classList.contains('dark-mode')) {
+        button.innerText = "Switch to Light Mode";
+    } else {
+        button.innerText = "Switch to Dark Mode";
+    }
+}
+function showModal(message) {
+    document.getElementById('modal-message').innerText = message;
+    document.getElementById('modal').style.display = "flex";
+}
+
+document.querySelector('.close-btn').onclick = function() {
+    document.getElementById('modal').style.display = "none";
+}
+</script>
+</body>
+</html>
+profile.php<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+// Include your database connection file
+require_once 'config.php';
+
+$user_id = $_SESSION['user_id'];
+
+// Fetch user data from the database
+$query = "SELECT * FROM users WHERE id = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$user = $result->fetch_assoc();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Get the updated user data from the form
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $profile_picture = $_FILES['profile_picture'];
+
+    // Handle profile picture upload (if any)
+    if ($_FILES['profile_picture']['name']) {
+        $target_dir = "uploads/"; // Folder where the image will be uploaded
+        $target_file = $target_dir . basename($_FILES['profile_picture']['name']); // The full path of the uploaded file
+    
+        // Move the uploaded file to the uploads folder
+        if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $target_file)) {
+            $profile_pic_path = $target_file;
+    
+            // Update profile picture in the database
+            $update_query = "UPDATE users SET name = ?, email = ?, profile_picture = ? WHERE id = ?";
+            $stmt = $conn->prepare($update_query);
+            $stmt->bind_param("sssi", $name, $email, $profile_pic_path, $user_id);
+        } else {
+            echo "Error uploading the image.";
+        }
+    } else {
+        // Update user info without changing the profile picture
+        $update_query = "UPDATE users SET name = ?, email = ? WHERE id = ?";
+        $stmt = $conn->prepare($update_query);
+        $stmt->bind_param("ssi", $name, $email, $user_id);
+    }
+    
+
+    if ($stmt->execute()) {
+        // Update session variables with the new data
+        $_SESSION['user_name'] = $name; // Update session name
+        $_SESSION['user_profile_pic'] = $profile_pic_path; // Update session profile picture
+
+        // Redirect to index.html
+        header("Location: index.html"); // Redirect to the home page after successful update
+        exit();
+    } else {
+        echo "Error updating profile!";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="profile-container">
+        <h2>Edit Your Profile</h2>
+        <form action="profile.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">New Password:</label>
+                <input type="password" name="password" id="password">
+            </div>
+
+            <div class="form-group">
+                <label for="profile_picture">Profile Picture:</label>
+                <input type="file" name="profile_picture" id="profile_picture">
+            </div>
+
+            <button type="submit">Update Profile</button>
+        </form>
+    </div>
+</body>
+</html>
+
+mark_attendance.php<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    echo "Error: You must be logged in.";
+    exit();
+}
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "attendance_db";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$data = json_decode(file_get_contents("php://input"), true);
+$latitude = $data['latitude'];
+$longitude = $data['longitude'];
+$user_id = $_SESSION['user_id'];
+
+// Allowed location (Change to actual values)
+$allowed_lat = 6.491373;  // Change to allowed latitude
+$allowed_lon = 3.391494;  // Change to allowed longitude
+$radius = 0.01;
+
+if (abs($latitude - $allowed_lat) <= $radius && abs($longitude - $allowed_lon) <= $radius) {
+    // Get user details
+    $sql = "SELECT name FROM users WHERE id = '$user_id'";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $user_name = $row['name'];
+
+        // Insert attendance record
+        $sql = "INSERT INTO attendance (user_id, latitude, longitude) VALUES ('$user_id', '$latitude', '$longitude')";
+        if ($conn->query($sql) === TRUE) {
+            echo "Attendance marked successfully by $user_name at " . date("Y-m-d H:i:s") . "!";
+        } else {
+            echo "Error: " . $conn->error;
+        }
+    } else {
+        echo "Error: User not found.";
+    }
+} else {
+    echo "Error: You are not in the allowed area.";
+}
+
+$conn->close();
+?>
+logout.php<?php
+session_start();
+session_unset(); // Remove session variables
+session_destroy(); // Destroy the session
+header("Location: login.php"); // Redirect to login page
+exit();
+?>
+login.php<?php
+session_start();
+include('config.php');  // Ensure you have this file to connect to the database
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get user input from the form
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Create a query to find the user by email
+    $query = "SELECT id, name, profile_picture, password FROM users WHERE email = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $email);  // Bind email to the query
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();  // Fetch the user record
+
+    if ($user) {
+        // Verify password
+        if (password_verify($password, $user['password'])) {
+            // Set session variables if login is successful
+            $_SESSION['user_id'] = $user['id'];  // Store user ID
+            $_SESSION['user_name'] = $user['name'];  // Store user name
+            $_SESSION['user_profile_pic'] = $user['profile_picture'];  // Store profile picture path
+
+            // Redirect to index or dashboard after successful login
+            header("Location: index.php");
+            exit();
+        } else {
+            // Incorrect password
+            $error_message = "Incorrect password.";
+        }
+    } else {
+        // User not found
+        $error_message = "User not found.";
+    }
+}
+?>
+
+<!-- HTML form for login -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Display error message if any -->
+    <?php if (isset($error_message)) { echo "<p style='color: red;'>$error_message</p>"; } ?>
+
+    <form action="login.php" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+</body>
+</html>
+index.php<?php
+// Start the session to check if the user is logged in
+session_start();
+include('config.php');
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get user input from the form
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Create a query to find the user by email
+    $query = "SELECT id, name, profile_picture, password FROM users WHERE email = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $email);  // Bind email to the query
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();  // Fetch the user record
+
+    if ($user) {
+        // Verify password
+        if (password_verify($password, $user['password'])) {
+            // Set session variables if login is successful
+            $_SESSION['user_id'] = $user['id'];  // Store user ID
+            $_SESSION['user_name'] = $user['name'];  // Store user name
+            $_SESSION['user_profile_pic'] = $user['profile_picture'];  // Store profile picture path
+
+            // Redirect to index or dashboard after successful login
+            header("Location: index.php");
+            exit();  // Ensure the script stops here after the redirect
+        } else {
+            // Incorrect password
+            $error_message = "Incorrect password.";
+        }
+    } else {
+        // User not found
+        $error_message = "User not found.";
+    }
+}
+?>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Attendance System</title>
+        <link rel="stylesheet" href="styles.css">
+        <!-- FontAwesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+
+    <body>
+        <header>
+            <button id="dark-mode-btn" class="dark-mode-btn" onclick="toggleDarkMode()">Switch to Dark Mode</button>
+        </header>
+
+        <div class="profile">
+            <!-- Profile Image with Name -->
+            <a href="profile.php">
+                <div class="profile-image">
+                    <img src="uploads/<?php echo htmlspecialchars($user_profile_pic); ?>" altmagrofile Picture">
+                </div>
+                <div class="profile-name">
+                    <p>
+                        <?php echo htmlspecialchars($user_name); ?>
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <div id="preloader" class="preloader">
+            <div class="spinner"></div>
+        </div>
+
+        <h2>Mark Attendance</h2>
+        <button onclick="markAttendance()">Mark Attendance</button>
+        <div class="spinner" id="spinner"></div>
+        <p id="status"></p>
+        <a href="logout.php">Logout</a>
+
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <p id="modal-message"></p>
+            </div>
+        </div>
+
+        <script>
+            window.onload = function() {
+                document.getElementById('preloader').style.display = 'none';
+            }
+
+            document.getElementById('preloader').style.display = 'flex'; // Show preloader during load
+
+            function updateProgressBar(percent) {
+                document.getElementById('progress-container').style.display = 'block';
+                document.getElementById('progress-bar').style.width = percent + '%';
+            }
+
+            function markAttendance() {
+                updateProgressBar(50); // Update progress bar
+                document.getElementById("spinner").style.display = "block"; // Show spinner
+
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition((position) => {
+                        let lat = position.coords.latitude;
+                        let lon = position.coords.longitude;
+                        let allowedLat = 6.49134080; // Change to allowed latitude
+                        let allowedLon = 3.39148800; // Change to allowed longitude
+                        let radius = 0.01; // Allowed range (~1.1 km)
+
+                        if (Math.abs(lat - allowedLat) <= radius && Math.abs(lon - allowedLon) <= radius) {
+                            fetch('mark_attendance.php', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    credentials: 'include',
+                                    body: JSON.stringify({
+                                        latitude: lat,
+                                        longitude: lon
+                                    })
+                                })
+                                .then(response => response.text())
+                                .then(data => {
+                                    document.getElementById('status').innerText = data;
+                                    document.getElementById("spinner").style.display = "none"; // Hide spinner
+                                });
+                        } else {
+                            document.getElementById('status').innerText = "You are not in the allowed area.";
+                            document.getElementById("spinner").style.display = "none"; // Hide spinner
+                        }
+                    });
+                } else {
+                    document.getElementById('status').innerText = "Geolocation is not supported.";
+                    document.getElementById("spinner").style.display = "none"; // Hide spinner
+                }
+            }
+
+            function toggleDarkMode() {
+                document.body.classList.toggle('dark-mode');
+                let button = document.getElementById('dark-mode-btn');
+                if (document.body.classList.contains('dark-mode')) {
+                    button.innerText = "Switch to Light Mode";
+                } else {
+                    button.innerText = "Switch to Dark Mode";
+                }
+            }
+
+            function showModal(message) {
+                document.getElementById('modal-message').innerText = message;
+                document.getElementById('modal').style.display = "flex";
+            }
+
+            document.querySelector('.close-btn').onclick = function() {
+                document.getElementById('modal').style.display = "none";
+            }
+        </script>
+    </body>
+
+    </html>
+    login.php
+    <?php
+session_start();
+include('config.php');  // Ensure you have this file to connect to the database
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get user input from the form
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Create a query to find the user by email
+    $query = "SELECT id, name, profile_picture, password FROM users WHERE email = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $email);  // Bind email to the query
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();  // Fetch the user record
+
+    if ($user) {
+        // Verify password
+        if (password_verify($password, $user['password'])) {
+            // Set session variables if login is successful
+            $_SESSION['user_id'] = $user['id'];  // Store user ID
+            $_SESSION['user_name'] = $user['name'];  // Store user name
+            $_SESSION['user_profile_pic'] = $user['profile_picture'];  // Store profile picture path
+
+            // Redirect to index or dashboard after successful login
+            header("Location: index.php");
+            exit();
+        } else {
+            // Incorrect password
+            $error_message = "Incorrect password.";
+        }
+    } else {
+        // User not found
+        $error_message = "User not found.";
+    }
+}
+?>
+
+<!-- HTML form for login -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Display error message if any -->
+    <?php if (isset($error_message)) { echo "<p style='color: red;'>$error_message</p>"; } ?>
+
+    <form action="login.php" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+</body>
+</html>
+config.php<?php
+// config.php (Make sure the credentials are correct)
+$servername = "localhost";
+$username = "root"; // Or your database username
+$password = ""; // Or your database password
+$dbname = "attendance_db"; // Your database name
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
